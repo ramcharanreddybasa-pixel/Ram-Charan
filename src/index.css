@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-canvas: #FAF8F5;
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #F4F1EC;
+  --color-border-warm: #E7E2DA;
+  --color-ink: #1C1926;
+  --color-ink-secondary: #524C61;
+  --color-ink-muted: #797288;
+  --color-violet-deep: #4C1D95;
+  --color-violet-hover: #3B157A;
+  --color-lavender-soft: #EDE9FE;
+  --color-lavender-wash: #F5F3FF;
+  --color-lavender-border: #DDD6FE;
+  --color-coral: #E86A58;
+  --color-coral-hover: #D45746;
+  --color-coral-soft: #FFF1EE;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+  }
+
+  h1, h2, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Subtle custom scrollbars for academic workspace panes */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DDD7CE;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C4BCB1;
+}
+
+/* Markdown prose formatting inside AI chat bubbles */
+.academic-prose {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #1C1926;
+}
+
+.academic-prose p {
+  margin-bottom: 0.75rem;
+}
+
+.academic-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.academic-prose strong {
+  font-weight: 600;
+  color: #1C1926;
+}
+
+.academic-prose ul,
+.academic-prose ol {
+  margin: 0.5rem 0 0.75rem 1.25rem;
+}
+
+.academic-prose ul {
+  list-style-type: disc;
+}
+
+.academic-prose ol {
+  list-style-type: decimal;
+}
+
+.academic-prose li {
+  margin-bottom: 0.35rem;
+}
+
+.academic-prose h1,
+.academic-prose h2,
+.academic-prose h3,
+.academic-prose h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: #1C1926;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.academic-prose h3 {
+  font-size: 1rem;
+}
+
+.academic-prose code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background-color: #F4F1EC;
+  color: #4C1D95;
+  padding: 0.125rem 0.35rem;
+  border-radius: 0.25rem;
+}
+
+.academic-prose pre {
+  background-color: #F4F1EC;
+  border: 1px solid #E7E2DA;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+
+.academic-prose pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.academic-prose blockquote {
+  background-color: #F5F3FF;
+  border: 1px solid #DDD6FE;
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.9rem;
+  margin: 0.75rem 0;
+  color: #3B157A;
+}
+
+.academic-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.85rem;
+}
+
+.academic-prose th,
+.academic-prose td {
+  border: 1px solid #E7E2DA;
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+}
+
+.academic-prose th {
+  background-color: #F4F1EC;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
